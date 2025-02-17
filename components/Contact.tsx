@@ -1,10 +1,8 @@
+"use client"
+
 import type React from "react"
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { SiGmail, SiWhatsapp } from 'react-icons/si'
-import { FiSend } from 'react-icons/fi'
 
 const Contact: React.FC = () => {
   return (
@@ -15,16 +13,94 @@ const Contact: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text"
         >
-          Let's Work Together
+          Let's Connect
         </motion.h2>
 
-        <div className="relative group bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-1 shadow-2xl">
-          <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-lg rounded-xl p-8">
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Contact Channels */}
-              <div className="space-y-8 border-r-2 border-gray-200 dark:border-gray-700 pr-8">
-                <h3 className="text-2xl font-bold dark:text-white">Direct Reach</h3>
-                
+        <div className="flex flex-col md:flex-row items-center gap-20 px-10">
+          {/* Animated Connection Avatar */}
+          <motion.div 
+            className="relative group w-64 h-64 flex items-center justify-center"
+            whileHover={{ scale: 1.05 }}
+          >
+            {/* Glowing orb */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-20 blur-3xl animate-pulse" />
+            
+            {/* Animated connection network SVG */}
+            <motion.svg
+              viewBox="0 0 100 100"
+              className="w-full h-full absolute"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+            >
+              {/* Central node */}
+              <circle cx="50" cy="50" r="8" fill="currentColor" className="text-blue-500" />
+              
+              {/* Satellite nodes */}
+              {[0, 90, 180, 270].map((rotation, i) => (
+                <g key={i} transform={`rotate(${rotation} 50 50)`}>
+                  <motion.circle
+                    cx="50"
+                    cy="20"
+                    r="4"
+                    fill="currentColor"
+                    className="text-purple-500"
+                    animate={{ scale: [0.8, 1.2, 0.8] }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      delay: i * 0.2
+                    }}
+                  />
+                  <motion.path
+                    d="M50 50 L50 20"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                    className="text-blue-300"
+                    strokeDasharray="0 1"
+                    animate={{ strokeDasharray: ["0 1", "1 1", "0 1"] }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      delay: i * 0.2
+                    }}
+                  />
+                </g>
+              ))}
+            </motion.svg>
+
+            {/* Revolving Contact Icons */}
+            <motion.div
+              className="absolute inset-0"
+              animate={{ rotate: -360 }}
+              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            >
+              <motion.a
+                href="mailto:kedareswarkotha@gmail.com"
+                className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2"
+                whileHover={{ scale: 1.5 }}
+              >
+                <SiGmail className="w-8 h-8 text-blue-500 dark:text-blue-400" />
+              </motion.a>
+              <motion.a
+                href="https://wa.me/9703181979"
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2"
+                whileHover={{ scale: 1.5 }}
+              >
+                <SiWhatsapp className="w-8 h-8 text-green-500 dark:text-green-400" />
+              </motion.a>
+            </motion.div>
+          </motion.div>
+
+          {/* Contact Channels */}
+          <div className="space-y-8 flex-1">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-lg rounded-xl p-8 shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-6 dark:text-white">Direct Reach</h3>
+              
+              <div className="space-y-6">
                 <motion.a
                   whileHover={{ x: 5 }}
                   href="mailto:kedareswarkotha@gmail.com"
@@ -53,53 +129,7 @@ const Contact: React.FC = () => {
                   </div>
                 </motion.a>
               </div>
-
-              {/* Contact Form */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold dark:text-white">Send Message</h3>
-                
-                <form className="space-y-6">
-                  <div className="relative">
-                    <Input
-                      placeholder=" "
-                      className="peer bg-white dark:bg-gray-700 h-12 px-4 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500"
-                    />
-                    <label className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-300 pointer-events-none transition-all peer-placeholder-shown:text-base peer-focus:-translate-y-7 peer-focus:text-sm peer-focus:text-blue-500">
-                      Your Name
-                    </label>
-                  </div>
-
-                  <div className="relative">
-                    <Input
-                      type="email"
-                      placeholder=" "
-                      className="peer bg-white dark:bg-gray-700 h-12 px-4 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500"
-                    />
-                    <label className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-300 pointer-events-none transition-all peer-placeholder-shown:text-base peer-focus:-translate-y-7 peer-focus:text-sm peer-focus:text-blue-500">
-                      Your Email
-                    </label>
-                  </div>
-
-                  <div className="relative">
-                    <Textarea
-                      placeholder=" "
-                      className="peer bg-white dark:bg-gray-700 h-32 px-4 py-2 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500"
-                    />
-                    <label className="absolute left-4 top-4 text-gray-400 dark:text-gray-300 pointer-events-none transition-all peer-placeholder-shown:text-base peer-focus:-translate-y-6 peer-focus:text-sm peer-focus:text-blue-500">
-                      Your Message
-                    </label>
-                  </div>
-
-                  <Button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
-                  >
-                    <FiSend className="mr-2 h-4 w-4" />
-                    Send Message
-                  </Button>
-                </form>
-              </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
