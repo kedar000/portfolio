@@ -18,7 +18,6 @@ const AboutMe: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="flex flex-col md:flex-row items-center gap-20"
         >
-          
 
           {/* Text Content */}
           <motion.div
@@ -32,7 +31,7 @@ const AboutMe: React.FC = () => {
               animate={{ backgroundPosition: ['0% 50%', '100% 50%'] }}
               transition={{ duration: 4, repeat: Infinity, repeatType: 'reverse' }}
             >
-              Passionate Developer &
+              Passionate Developer &amp;
               <br className="hidden md:inline" /> 
               <span className="whitespace-nowrap">Continuous Learner</span>
             </motion.h2>
@@ -52,7 +51,7 @@ const AboutMe: React.FC = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <p className="text-gray-700 dark:text-gray-300 text-lg font-medium">
-                  When not coding, I'm exploring{' '}
+                  When not coding, I&apos;m exploring{' '}
                   <span className="text-purple-600 font-semibold hover:text-purple-700 transition-colors">
                     Web3 ecosystems
                   </span>, contributing to{' '}
@@ -123,4 +122,4 @@ const AboutMe: React.FC = () => {
   )
 }
 
-export default AboutMe
+export default AboutMe;

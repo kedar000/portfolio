@@ -1,7 +1,6 @@
 import type React from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { title } from "process"
 import { motion } from "framer-motion"
 
 const Projects: React.FC = () => {

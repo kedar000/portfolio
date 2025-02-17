@@ -13,7 +13,7 @@ const Contact: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text"
         >
-          Let's Connect
+          Let&apos;s Connect {/* Fixed apostrophe */}
         </motion.h2>
 
         <div className="flex flex-col md:flex-row items-center gap-20 px-10">
