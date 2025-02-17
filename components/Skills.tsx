@@ -4,19 +4,19 @@ import { Badge } from "@/components/ui/badge"
 const Skills: React.FC = () => {
   const skills = [
     { name: "Java", level: 90 },
-    { name: "JavaScript", level: 85 },
+    { name: "JavaScript", level: 80 },
     { name: "TypeScript", level: 80 },
     { name: "Node.js", level: 85 },
-    { name: "Express", level: 80 },
+    { name: "Express", level: 85 },
     { name: "Docker", level: 75 },
-    { name: "Prisma", level: 70 },
+    { name: "Prisma", level: 85 },
     { name: "PostgreSQL", level: 80 },
-    { name: "MongoDB", level: 75 },
+    { name: "MongoDB", level: 70 },
     { name: "Redis", level: 70 },
     { name: "Kafka", level: 65 },
     { name: "Microservices", level: 85 },
     { name: "API Development", level: 90 },
-    { name: "Data Structures and Algorithms", level: 85 },
+    { name: "Data Structures and Algorithms", level: 80 },
   ]
 
   return (
@@ -47,4 +47,3 @@ const Skills: React.FC = () => {
 }
 
 export default Skills
-
