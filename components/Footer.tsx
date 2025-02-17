@@ -7,19 +7,25 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6 text-center">
         <div className="flex justify-center space-x-6 mb-4">
           <a
-            href="#"
+            href="https://github.com/kedar000"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors"
           >
             <Github className="h-6 w-6" />
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/kedar-k-209506261/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors"
           >
             <Linkedin className="h-6 w-6" />
           </a>
           <a
-            href="#"
+            href="https://x.com/StackedSenpai"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors"
           >
             <Twitter className="h-6 w-6" />
@@ -32,4 +38,3 @@ const Footer: React.FC = () => {
 }
 
 export default Footer
-
