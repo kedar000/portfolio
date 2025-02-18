@@ -1,7 +1,7 @@
-import type React from "react"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, ChevronDown } from "lucide-react"
-import { motion } from "framer-motion"
+import type React from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, ChevronDown, Github } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Hero: React.FC = () => {
   return (
@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
             transition={{
               duration: Math.random() * 4 + 6,
               repeat: Infinity,
-              delay: Math.random()  * 1,
+              delay: Math.random() * 1,
               ease: "linear",
             }}
           />
@@ -59,9 +59,15 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
-          <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white">
-            Explore My Work <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+          <a
+            href="https://github.com/kedar000"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white">
+              <Github className="h-5 w-5" /> Explore My Work <ArrowRight className="h-4 w-4" />
+            </Button>
+          </a>
         </motion.div>
       </div>
 
@@ -85,7 +91,7 @@ const Hero: React.FC = () => {
         ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

@@ -3,7 +3,7 @@
 import type React from "react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
-import { Moon, Sun } from "lucide-react"
+import { Moon, Sun, Github } from "lucide-react" // Added Github icon
 import { motion, useScroll, useMotionValueEvent } from "framer-motion"
 import { useState } from "react"
 
@@ -81,15 +81,34 @@ const Navbar: React.FC = () => {
               ))}
             </div>
 
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-              className="relative"
-            >
-              <Sun className="h-[1.2rem] w-[1.2rem] dark:hidden" />
-              <Moon className="hidden dark:block h-[1.2rem] w-[1.2rem]" />
-            </Button>
+            <div className="flex items-center gap-2">
+              {/* GitHub Button */}
+              <Button
+                variant="ghost"
+                size="icon"
+                asChild
+                className="rounded-full"
+              >
+                <a 
+                  href="https://github.com/kedar000" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github className="h-[1.2rem] w-[1.2rem]" />
+                </a>
+              </Button>
+
+              {/* Theme Toggle Button */}
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                className="rounded-full"
+              >
+                <Sun className="h-[1.2rem] w-[1.2rem] dark:hidden" />
+                <Moon className="hidden dark:block h-[1.2rem] w-[1.2rem]" />
+              </Button>
+            </div>
           </div>
         </div>
       </div>
