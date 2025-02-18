@@ -25,14 +25,6 @@ const Projects: React.FC = () => {
       github: "https://github.com/HarshalRawal/paytm-project-main"
     },
     {
-      title: "Online Food Delivery Platform",
-      description:
-        "A scalable food delivery system featuring real-time order tracking, multi-vendor support, and intelligent order routing.",
-      technologies: ["WebSockets", "Redis", "Pub/Sub", "Queues", "Microservices", "Node.js", "Express", "MongoDB"],
-      status: "Ongoing",
-      github: "https://github.com/kedar000/food-delivery"
-    },
-    {
       title: "Zapier-like Automation Tool",
       description:
         "An extensible platform for creating automated workflows between various web services, featuring a user-friendly interface for creating complex integrations.",
@@ -46,6 +38,14 @@ const Projects: React.FC = () => {
       technologies: ["Next.js", "Prisma", "PostgreSQL", "Docker", "Kafka", "TypeScript", "Redis"],
       status: "Ongoing",
       github: "https://github.com/kedar000/EV-slot-booking-",
+    },
+    {
+      title: "Online Food Delivery Platform",
+      description:
+        "A scalable food delivery system featuring real-time order tracking, multi-vendor support, and intelligent order routing.",
+      technologies: ["WebSockets", "Redis", "Pub/Sub", "Queues", "Microservices", "Node.js", "Express", "MongoDB"],
+      status: "Ongoing",
+      github: "https://github.com/kedar000/food-delivery"
     }
   ]
 
