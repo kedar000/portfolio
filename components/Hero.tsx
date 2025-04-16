@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
           transition={{ delay: 0.2 }}
           className="text-2xl md:text-3xl mb-8"
         >
-          Backend Developer | Microservices Enthusiast
+          Full stack Developer | Microservices Enthusiast
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
