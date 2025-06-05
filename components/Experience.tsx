@@ -20,8 +20,6 @@ const experiences = [
     description:
       "Focused on backend development. Built RESTful APIs, implemented middleware, and integrated with Supabase. Continuously enhancing backend architecture and performance."
   }
-  
-  // add more experiences...
 ]
 
 const Experience: React.FC = () => {
@@ -38,7 +36,6 @@ const Experience: React.FC = () => {
       const dots = containerRef.current.querySelectorAll('.timeline-dot')
       const positions = Array.from(dots).map(dot => {
         const rect = dot.getBoundingClientRect()
-        // Dot center relative to container top, in pixels
         return rect.top + window.scrollY - containerTop + rect.height / 2
       })
 
@@ -54,17 +51,13 @@ const Experience: React.FC = () => {
     if (!containerRef.current) return
 
     const onScroll = () => {
-        
       const container = containerRef.current
-      if(container == null){
-        return null ;
-      }
+      if (!container) return 
       const containerRect = container.getBoundingClientRect()
       const containerTop = containerRect.top + window.scrollY
       const containerHeight = container.offsetHeight
 
-      // Current scroll position relative to top of container
-      const scrollY = window.scrollY + window.innerHeight / 2 // middle of viewport as trigger
+      const scrollY = window.scrollY + window.innerHeight / 2
       const relativeScroll = scrollY - containerTop
 
       if (relativeScroll <= 0) {
@@ -76,7 +69,6 @@ const Experience: React.FC = () => {
         return
       }
 
-      // Find max dot position <= relativeScroll
       let fill = 0
       for (let pos of dotPositions) {
         if (pos <= relativeScroll) {
@@ -89,7 +81,6 @@ const Experience: React.FC = () => {
     }
 
     window.addEventListener('scroll', onScroll, { passive: true })
-    // Initial call
     onScroll()
 
     return () => window.removeEventListener('scroll', onScroll)
@@ -102,55 +93,44 @@ const Experience: React.FC = () => {
     >
       <div className="container mx-auto max-w-4xl">
         <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text">
-          Journey So Far
+          Experience
         </h2>
 
-        <div
-          ref={containerRef}
-          className="relative pl-10 space-y-20"
-          style={{ minHeight: experiences.length * 180 }}
-        >
-          {/* Progress bar */}
+        <div className="relative pl-8 sm:pl-12" ref={containerRef}>
+          {/* Timeline vertical line */}
+          <div className="absolute left-3 sm:left-6 top-0 h-full w-1 bg-gray-300 dark:bg-gray-700 rounded-full" />
+          {/* Animated progress bar */}
           <motion.div
-            animate={{ height: progressHeight }}
-            transition={{ type: "spring", stiffness: 120, damping: 20 }}
-            className="absolute left-6 top-0 w-1 bg-gradient-to-b from-blue-400 to-purple-500 rounded-full origin-top"
-            />
+            className="absolute left-3 sm:left-6 top-0 w-1 bg-blue-500 rounded-full origin-top"
+            style={{ height: progressHeight }}
+          />
 
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.5 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="relative group"
-            >
-              {/* Dot */}
-              <div className="absolute -left-6 top-4 timeline-dot">
-                <div className="w-5 h-5 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 shadow-md border-4 border-white dark:border-gray-900" />
-              </div>
+          <div className="space-y-16">
+            {experiences.map((exp, index) => (
+              <div key={index} className="relative">
+                {/* Timeline dot */}
+                <div className="timeline-dot absolute left-[-18px] sm:left-[-10px] top-2 w-4 h-4 bg-blue-500 rounded-full border-4 border-white dark:border-gray-900 z-10" />
 
-              {/* Card */}
-              <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-md p-6 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-300 transition-all hover:shadow-2xl">
-                <h3 className="text-2xl font-semibold text-blue-700 dark:text-blue-300">
-                  {exp.role} @ {exp.company}
-                </h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{exp.duration}</p>
-                <p className="text-gray-700 dark:text-gray-300 mb-4">{exp.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {exp.tech.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 text-sm bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-800/30 dark:to-purple-700/30 text-blue-700 dark:text-blue-200 rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 ml-6 sm:ml-10">
+                  <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
+                    {exp.role} @ <span className="text-blue-600">{exp.company}</span>
+                  </h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{exp.duration}</p>
+                  <p className="text-gray-700 dark:text-gray-300 mb-2">{exp.description}</p>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {exp.tech.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="text-xs px-3 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-800 dark:text-blue-100"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
