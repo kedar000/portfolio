@@ -70,7 +70,7 @@ const Experience: React.FC = () => {
       }
 
       let fill = 0
-      for (let pos of dotPositions) {
+      for (const pos of dotPositions) {
         if (pos <= relativeScroll) {
           fill = pos
         } else {
