@@ -54,9 +54,6 @@ const AboutMe: React.FC = () => {
                   When not coding, I&apos;m exploring{' '}
                   <span className="text-purple-600 font-semibold hover:text-purple-700 transition-colors">
                     Web3 ecosystems
-                  </span>, contributing to{' '}
-                  <span className="text-blue-600 font-semibold hover:text-blue-700 transition-colors">
-                    Open Source
                   </span>, or enjoying{' '}
                   <span className="text-pink-600 font-semibold hover:text-pink-700 transition-colors">
                     anime marathons

@@ -7,6 +7,7 @@ import Projects from "../components/Projects"
 import Contact from "../components/Contact"
 import Footer from "../components/Footer"
 import { ThemeProvider } from "next-themes"
+import ExperienceTimeline from "@/components/Experience"
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
           <Hero />
           <About />
           <Skills />
+          <ExperienceTimeline />
           <Projects />
           <Contact />
         </main>
