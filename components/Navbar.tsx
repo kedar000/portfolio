@@ -3,7 +3,8 @@
 import type React from "react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
-import { Moon, Sun, Github } from "lucide-react" // Added Github icon
+import { Moon, Sun, Github } from "lucide-react"
+import { FaGitlab } from "react-icons/fa"
 import { motion, useScroll, useMotionValueEvent } from "framer-motion"
 import { useState } from "react"
 
@@ -20,13 +21,12 @@ const Navbar: React.FC = () => {
       const el = document.getElementById(section.toLowerCase())
       return el ? el.offsetTop : 0
     })
-    
+
     const currentSectionIndex = sectionOffsets.findIndex(offset => latest < offset - 100) - 1
     if (currentSectionIndex >= 0) {
       setActiveSection(sections[currentSectionIndex])
     }
 
-    // Hide/show navbar logic
     const previous = scrollY.getPrevious()
     if (previous !== undefined && latest > previous && latest > 150) {
       setHidden(true)
@@ -64,8 +64,8 @@ const Navbar: React.FC = () => {
                   key={section}
                   href={`#${section.toLowerCase()}`}
                   className={`relative px-2 py-1 ${
-                    activeSection === section 
-                      ? "text-blue-500" 
+                    activeSection === section
+                      ? "text-blue-500"
                       : "text-gray-600 dark:text-gray-300"
                   } transition-colors`}
                 >
@@ -83,30 +83,42 @@ const Navbar: React.FC = () => {
 
             <div className="flex items-center gap-2">
               {/* GitHub Button */}
-              <Button
-                variant="ghost"
-                size="icon"
-                asChild
-                className="rounded-full"
-              >
-                <a 
-                  href="https://github.com/kedar000" 
+              <Button variant="ghost" size="icon" asChild className="rounded-full">
+                <a
+                  href="https://github.com/kedar000"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="GitHub"
                 >
-                  <Github className="h-[1.2rem] w-[1.2rem]" />
+                  <Github className="h-5 w-5" />
                 </a>
               </Button>
 
-              {/* Theme Toggle Button */}
+              {/* GitLab Button */}
+              <Button variant="ghost" size="icon" asChild className="rounded-full">
+                <a
+                  href="https://gitlab.com/kedar000"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitLab"
+                >
+                  <FaGitlab className="h-5 w-5 text-orange-600" />
+                </a>
+              </Button>
+
+              {/* Theme Toggle */}
               <Button
                 variant="ghost"
                 size="icon"
-                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
                 className="rounded-full"
+                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                aria-label="Toggle Theme"
               >
-                <Sun className="h-[1.2rem] w-[1.2rem] dark:hidden" />
-                <Moon className="hidden dark:block h-[1.2rem] w-[1.2rem]" />
+                {theme === "light" ? (
+                  <Moon className="h-5 w-5" />
+                ) : (
+                  <Sun className="h-5 w-5" />
+                )}
               </Button>
             </div>
           </div>

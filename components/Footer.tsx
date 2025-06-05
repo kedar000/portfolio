@@ -1,5 +1,6 @@
 import type React from "react"
 import { Github, Linkedin, Twitter } from "lucide-react"
+import { FaGitlab } from "react-icons/fa" // Import GitLab icon
 
 const Footer: React.FC = () => {
   return (
@@ -13,6 +14,14 @@ const Footer: React.FC = () => {
             className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors"
           >
             <Github className="h-6 w-6" />
+          </a>
+          <a
+            href="https://gitlab.com/kedar000"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-600 hover:text-orange-500 dark:text-gray-400 dark:hover:text-orange-400 transition-colors"
+          >
+            <FaGitlab className="h-6 w-6" />
           </a>
           <a
             href="https://www.linkedin.com/in/kedar-k-209506261/"
