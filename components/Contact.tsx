@@ -10,7 +10,7 @@ const Contact: React.FC = () => {
       <div className="container mx-auto max-w-4xl">
         <h2 className="text-4xl font-extrabold mb-12 text-center uppercase tracking-wider">
           <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-            Let's Connect
+            Let&apos;s Connect
           </span>
         </h2>
 
