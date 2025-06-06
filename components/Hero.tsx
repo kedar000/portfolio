@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
               top: `${Math.random() * 100}%`,
             }}
             initial={{ opacity: 0, y: 100, rotate: 0 }}
-            animate={{ opacity: [0, 0.25, 0], y: -100, rotate: 360 }}
+            animate={{ opacity: [0, 0.9, 0], y: -100, rotate: 360 }}
             transition={{
               duration: Math.random() * 4 + 6,
               repeat: Infinity,
@@ -39,6 +39,7 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text"
         >
+          
           Hey, This is Kedar
         </motion.h1>
 

@@ -8,7 +8,7 @@ const AboutMe: React.FC = () => {
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-10 dark:opacity-5">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 animate-pulse" />
-        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+        <div className="absolute inset-0  bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
       </div>
 
       <div className="container mx-auto max-w-5xl relative">

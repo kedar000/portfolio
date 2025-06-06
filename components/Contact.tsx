@@ -8,13 +8,11 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="py-20 px-6 bg-gray-100 dark:bg-gray-800">
       <div className="container mx-auto max-w-4xl">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text"
-        >
-          Let&apos;s Connect {/* Fixed apostrophe */}
-        </motion.h2>
+        <h2 className="text-4xl font-extrabold mb-12 text-center uppercase tracking-wider">
+          <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+            Let's Connect
+          </span>
+        </h2>
 
         <div className="flex flex-col md:flex-row items-center gap-20 px-10">
           {/* Animated Connection Avatar */}

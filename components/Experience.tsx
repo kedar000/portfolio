@@ -101,9 +101,12 @@ const Experience: React.FC = () => {
       className="relative py-20 px-6 bg-gradient-to-br from-gray-50 to-gray-200 dark:from-gray-900 dark:to-gray-800"
     >
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text">
-          Experience
-        </h2>
+       
+        <h2 className="text-4xl font-extrabold mb-12 text-center uppercase tracking-wider">
+            <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+              Experience
+            </span>
+          </h2>
 
         <div
           ref={containerRef}
