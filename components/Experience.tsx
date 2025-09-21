@@ -7,7 +7,7 @@ const experiences = [
   {
     company: "DstarTechnology",
     role: "Full Stack Developer Intern",
-    duration: "May 2025 – Present",
+    duration: "May 2025 – August 2025",
     tech: ["React", "Node.js", "TypeScript", "React Query", "Axios"],
     description:
       "Working on both frontend and backend. Migrated Axios calls to React Query and implemented mutation logic. Ongoing development and enhancement of full-stack features."

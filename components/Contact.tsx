@@ -3,6 +3,7 @@
 import type React from "react"
 import { motion } from "framer-motion"
 import { SiGmail, SiWhatsapp } from 'react-icons/si'
+import { FaFilePdf } from "react-icons/fa"  // PDF icon for resume
 
 const Contact: React.FC = () => {
   return (
@@ -99,6 +100,7 @@ const Contact: React.FC = () => {
               <h3 className="text-2xl font-bold mb-6 dark:text-white">Direct Reach</h3>
               
               <div className="space-y-6">
+                {/* Email */}
                 <motion.a
                   whileHover={{ x: 5 }}
                   href="mailto:kedareswarkotha@gmail.com"
@@ -109,10 +111,13 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="font-medium dark:text-white">Email</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">kedareswarkotha@gmail.com</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                      kedareswarkotha@gmail.com
+                    </p>
                   </div>
                 </motion.a>
 
+                {/* WhatsApp */}
                 <motion.a
                   whileHover={{ x: 5 }}
                   href="https://wa.me/9703181979"
@@ -123,7 +128,28 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="font-medium dark:text-white">WhatsApp</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">+91 9703181979</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                      +91 9703181979
+                    </p>
+                  </div>
+                </motion.a>
+
+                {/* Resume */}
+                <motion.a
+                  whileHover={{ x: 5 }}
+                  href="https://drive.google.com/file/d/1Mk0HIa1l0bNH-a6Bzj6EqdTuyHJyazkL/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm hover:shadow-md transition-all"
+                >
+                  <div className="p-3 bg-red-100 dark:bg-gray-600 rounded-lg">
+                    <FaFilePdf className="w-6 h-6 text-red-500 dark:text-red-400" />
+                  </div>
+                  <div>
+                    <p className="font-medium dark:text-white">Resume</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
+                      📄 View / Download Resume
+                    </p>
                   </div>
                 </motion.a>
               </div>
