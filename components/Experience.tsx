@@ -7,7 +7,7 @@ const experiences = [
   {
     company: "DstarTechnology",
     role: "Full Stack Developer Intern",
-    duration: "May 2025 – August 2025",
+    duration: "May 2025 – August 2025 (3 months)",
     tech: ["React", "Node.js", "TypeScript", "React Query", "Axios"],
     description:
       "Working on both frontend and backend. Migrated Axios calls to React Query and implemented mutation logic. Ongoing development and enhancement of full-stack features."
@@ -15,10 +15,18 @@ const experiences = [
   {
     company: "CreaxOS",
     role: "Backend Developer Intern",
-    duration: "June 2025 – Present",
+    duration: "June 2025 – Nov 2025 (6 months)",
     tech: ["Node.js", "Express", "TypeScript", "Supabase"],
     description:
       "Focused on backend development. Built RESTful APIs, implemented middleware, and integrated with Supabase. Continuously enhancing backend architecture and performance."
+  },
+  {
+    company: "Mercer-Mettl",
+    role: "Software Developer Intern",
+    duration: "Jan 2026 – Present",
+    tech: ["Java","Spring Boot","Spring Security","JWT","Hibernate / JPA","PostgreSQL","Liquibase","JUnit","React"],
+    description:
+      "Developing secure REST APIs using Spring Boot and Spring Security with JWT. Managing database migrations with Liquibase and writing unit/integration tests. Contributing to React-based frontend integration."
   }
   
   // add more experiences...

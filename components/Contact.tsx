@@ -135,7 +135,7 @@ const Contact: React.FC = () => {
                 </motion.a>
 
                 {/* Resume */}
-                <motion.a
+                {/* <motion.a
                   whileHover={{ x: 5 }}
                   href="https://drive.google.com/file/d/1Mk0HIa1l0bNH-a6Bzj6EqdTuyHJyazkL/view?usp=sharing"
                   target="_blank"
@@ -151,7 +151,7 @@ const Contact: React.FC = () => {
                       📄 View / Download Resume
                     </p>
                   </div>
-                </motion.a>
+                </motion.a> */}
               </div>
             </motion.div>
           </div>
