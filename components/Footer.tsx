@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
             <FaGitlab className="h-6 w-6" />
           </a>
           <a
-            href="https://www.linkedin.com/in/kedar-k-209506261/"
+            href="www.linkedin.com/in/kedareswar-k-209506261"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors"
